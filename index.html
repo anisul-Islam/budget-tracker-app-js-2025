@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>📊 Personal Budget Tracker</h1>
+
+      <label for="userName">👤 Name: </label>
+      <input
+        type="text"
+        id="userName"
+        name="userName"
+        placeholder="Enter your name"
+      />
+
+      <label for="income">💰 Monthly Income:</label>
+      <input type="number" id="income" placeholder="Enter your income" />
+
+      <label for="numExpenses">💸 Number of Expenses:</label>
+      <input type="number" id="numExpenses" placeholder="e.g. 3" />
+
+      <button id="startBudget">Start Budget</button>
+      <button id="resetBudget">Reset All</button>
+
+      <div id="expenseInputs"></div>
+
+      <button id="calculateBudget" style="display: none">
+        Calculate Budget
+      </button>
+      <button id="clearBudget" style="display: none">Clear Budget</button>
+      <div id="budgetResult"></div>
+
+      <!-- dark mode button  -->
+      <button id="darkModeToggle" style="margin-top: 10px">
+        🌙 Toggle Dark Mode
+      </button>
+    </div>
+
+    <canvas
+      id="budgetChart"
+      width="400"
+      height="400"
+      style="margin-top: 20px"
+    ></canvas>
+    <script src="budget-tracker-app.js"></script>
+  </body>
+</html>
