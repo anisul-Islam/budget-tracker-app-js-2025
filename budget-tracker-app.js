@@ -204,6 +204,8 @@ function displayResults(userBudget) {
 <p> Savings (20% of balance): $${userBudget.savings}</p> 
 <p>${userBudget.financialStatusMessage} </p>
   `;
+
+  renderChart(userBudget);
 }
 
 function toggleDarkMode() {
@@ -220,7 +222,7 @@ function runBudgetTracker() {
   renderChart(savedBudget);
 }
 
-function renderChart(savedBudget) {
+function renderChart(userBudget) {
   const ctx = budgetChart.getContext('2d');
   if (window.budgetPieChart) window.budgetPieChart.destroy();
   window.budgetPieChart = new Chart(ctx, {
@@ -231,9 +233,9 @@ function renderChart(savedBudget) {
         {
           label: 'Budget Breakdown',
           data: [
-            savedBudget.income,
-            savedBudget.totalExpenses,
-            savedBudget.savings,
+            userBudget.income,
+            userBudget.totalExpenses,
+            userBudget.savings,
           ],
           backgroundColor: ['#e74c3c', '#27ae60', '#f1c40f'],
         },
